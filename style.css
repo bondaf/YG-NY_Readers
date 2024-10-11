@@ -439,6 +439,15 @@ main {
     row-gap: 48px;
     margin-bottom: 48px;
 
+    position: relative;
+
+}
+
+
+.cards_to-top {
+    position: absolute;
+    right: -104px;
+    bottom: 276px;
 }
 
 .card {
@@ -1403,6 +1412,11 @@ footer>.container {
 
     .cards_block {
         column-gap: 60px;
+    }
+
+    .cards_to-top {
+        right: -104px;
+        bottom: 650px;
     }
 
     .card-info {
