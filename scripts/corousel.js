@@ -45,6 +45,47 @@ function Carousel (setting) {
         });
     }
 
+    let x0 = null;
+
+    function unify (e) { return e.changedTouches ? e.changedTouches[0] : e; };
+
+
+    function lock (e) { x0 = unify(e).clientX; };
+
+
+    const move = (e) => {
+        if (x0 || x0 === 0) {
+            let dx = unify(e).clientX - x0, s = Math.sign(dx);
+
+            if (dx < 0) {
+                this.next_slide();
+            }
+            else {
+                this.prev_slide();
+            }
+
+            x0 = null;
+        }
+    };
+    if (privates.sel.wrap !== null && privates.sel.wrap.length > 1) {
+        privates.sel.wrap.forEach((element) => {
+            element.addEventListener('touchmove', e => { e.preventDefault(); }, false);
+            element.addEventListener('mousedown', lock, false);
+            element.addEventListener('touchstart', lock, false);
+
+            element.addEventListener('mouseup', move, false);
+            element.addEventListener('touchend', move, false);
+        });
+    }
+
+    else {
+        privates.sel.wrap.addEventListener('touchmove', e => { e.preventDefault(); }, false);
+        privates.sel.wrap.addEventListener('mousedown', lock, false);
+        privates.sel.wrap.addEventListener('touchstart', lock, false);
+
+        privates.sel.wrap.addEventListener('mouseup', move, false);
+        privates.sel.wrap.addEventListener('touchend', move, false);
+    }
 
     const change_position = (newpos) => {
         privates.opt.position = newpos;
@@ -59,7 +100,21 @@ function Carousel (setting) {
             }
         });
 
+        if (privates.sel.next != null && privates.sel.prev != null) {
+            change_arrows();
+        }
 
+        if (!privates.setting.several_wrap) {
+            privates.sel.wrap.style["transform"] = `translateX(-${privates.opt.position * 100 * privates.setting.slide_coefficient}%)`;
+        }
+        else {
+            privates.sel.wrap.forEach((element) =>
+                element.style["transform"] = `translateX(-${privates.opt.position * 100 * privates.setting.slide_coefficient}%)`);
+        };
+
+    };
+
+    const change_arrows = () => {
         if (privates.opt.position === privates.opt.max_position - 1) {
             privates.sel.next.classList.add('disabled');
         }
@@ -74,15 +129,6 @@ function Carousel (setting) {
         else {
             privates.sel.prev.classList.remove('disabled');
         }
-
-        if (!privates.setting.several_wrap) {
-            privates.sel.wrap.style["transform"] = `translateX(-${privates.opt.position * 100 * privates.setting.slide_coefficient}%)`;
-        }
-        else {
-            privates.sel.wrap.forEach((element) =>
-                element.style["transform"] = `translateX(-${privates.opt.position * 100 * privates.setting.slide_coefficient}%)`);
-        };
-
     };
 
     /* Public methods */
@@ -92,12 +138,6 @@ function Carousel (setting) {
         if (privates.opt.position !== 0) {
             change_position(privates.opt.position - 1);
         }
-
-        //if (privates.opt.position < 0) {
-        //    privates.sel.wrap.classList.add('s-notransition');
-        //    privates.opt.position = privates.opt.max_position - 1;
-        //}
-
 
     };
 
@@ -109,12 +149,8 @@ function Carousel (setting) {
             change_position(privates.opt.position + 1);
         }
 
-
-
-        //if (privates.opt.position >= privates.opt.max_position - 1) {
-        //    privates.opt.position = 0;
-        //}
-
-
     };
 }
+
+
+

@@ -1,7 +1,9 @@
 const cards = document.querySelectorAll('.card');
 
 document.addEventListener("DOMContentLoaded", function () {
-    for (let i = 6; i < cards.length; i++) {
+    // 3 4 6
+    const cards_count = window.innerWidth <= 960 ? 3 : window.innerWidth < 1440 ? 4 : 6;
+    for (let i = cards_count; i < cards.length; i++) {
 
         cards[i].style.display = 'none';
     }

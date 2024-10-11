@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content='width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;' name='viewport' />
     <title>NY Reading</title>
 
     <link rel="stylesheet" href="style.css">
@@ -24,6 +23,40 @@
                 <li class="nav-top_item"><a href="">Положение об акции</a></li>
                 <li class="nav-top_item"><a href="">Зарегистрировать площадку</a></li>
             </ul>
+            <div class="burger">
+                <img src="./assets/burger.svg" alt="">
+            </div>
+
+            <div class="burger_menu" style="display: none;">
+                <img class="burger_menu-close" src="./assets/close.svg" alt="">
+                <ul class="burger_menu-list">
+                    <li class="text-white"><a href="" onclick="scrollToElem('.about')">Об акции</a></li>
+                    <li class="text-white"><a href="" onclick="scrollToElem('.cards')">Организаторы площадок</a></li>
+                    <li class="text-white"><a href="" onclick="scrollToElem('.videos')">Как выступать публично</a></li>
+                    <li class="text-white"><a href="" onclick="scrollToElem('.people')">Акция в лицах</a></li>
+                    <li class="text-white">
+                        <a href="" onclick="scrollToElem('.sign-up')">
+                            <button class="burger_menu-button text-white">
+                                Зарегистрировать площадку
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="burger_menu-links">
+                    <li class="text-white"><a href="">Положение об акции</a></li>
+                    <li class="text-white">
+                        <a href="">
+                            <svg width="37" height="23" viewBox="0 0 48 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M26.4245 29.8378H27.3736V19.176C33.2742 19.764 37.687 24.1615 39.4828 29.8378H48C46.2964 23.3783 41.9236 17.9425 35.9681 14.8806C41.294 11.5401 44.9979 6.15519 46.2042 0H38.4564C36.8148 5.93181 31.9914 11.3011 27.3736 11.8124V0H19.4975V20.659C14.7258 19.4827 8.46613 13.6788 8.20942 0H0C0.410589 18.6134 10.2361 29.8378 26.4245 29.8378Z"
+                                    fill="currentColor" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
 
         <div class="header_info">
@@ -45,7 +78,7 @@
                     <h1 class="banner_text-title">«Живая классика»</h1>
                 </div>
 
-                <a href="">
+                <a href="" onclick="scrollToElem('.sign-up')">
                     <button class="banner_button text-white">
                         Зарегистрировать площадку
                     </button>
@@ -55,10 +88,11 @@
 
         <nav class="header_nav-bottom">
             <ul class="header_nav-bottom_list text-white">
-                <li class="nav-bottom_item"><a href="">Об акции</a></li>
-                <li class="nav-bottom_item"><a href="">Организаторы площадок</a></li>
-                <li class="nav-bottom_item"><a href="">Как выступать публично</a></li>
-                <li class="nav-bottom_item"><a href="">Акции в людях</a></li>
+                <li class="nav-bottom_item"><a href="" onclick="scrollToElem('.about')">Об акции</a></li>
+                <li class="nav-bottom_item"><a href="" onclick="scrollToElem('.cards')">Организаторы площадок</a></li>
+                <li class="nav-bottom_item"><a href="" onclick="scrollToElem('.videos')">Как выступать публично</a>
+                </li>
+                <li class="nav-bottom_item"><a href="" onclick="scrollToElem('.people')">Акции в людях</a></li>
                 <li class="nav-bottom_item">
                     <a href="">
                         <svg width="48" height="30" viewBox="0 0 48 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,6 +104,34 @@
                 </li>
             </ul>
         </nav>
+
+        <div class="header_banner header_banner-mobile">
+            <div class="container">
+                <div class="banner_head">
+                    <div class="banner_date">
+                        <p class="banner_date-day">15</p>
+                        <p class="banner_date-month">декабря</p>
+                    </div>
+                    <img class="banner_head-img" src="./assets/snow.svg" alt="snow">
+                </div>
+
+                <div class="banner_text text-white">
+                    <h2 class="banner_text-first">Новогодние</h2>
+                    <h2 class="banner_text-second">семейные чтения вслух</h2>
+                    <h1 class="banner_text-title">«Живая классика»</h1>
+                </div>
+
+                <a href="" onclick="scrollToElem('.sign-up')">
+                    <button class="banner_button text-white">
+                        Зарегистрировать площадку
+                    </button>
+
+                    <button class="banner_button banner_button-420 text-white">
+                        Принять участие
+                    </button>
+                </a>
+            </div>
+        </div>
     </header>
     <main>
         <section class="about">
@@ -90,19 +152,22 @@
                             проведения в вашем регионе.</p`>
                     </div>
                     <img class="about_img" src="./assets/Family_reading_branch Copy 2.svg" alt="">
+                    <img class="stars" src="./assets/stars.svg" alt="star">
                 </div>
         </section>
         <section class="cards">
             <div class="container">
                 <h2 class="cards_title text-black">Флагманские площадки</h2>
                 <pre class="cards_subtitle text-black">Свяжитесь с кураторами, для участия в акции.
-                    Отправьте письмо c пометкой в теме письма «Новогодние семейные чтения вслух».</pre>
+Отправьте письмо c пометкой в теме письма «Новогодние семейные чтения вслух».</pre>
 
                 <div class="cards_block ">
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -117,9 +182,11 @@
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -134,9 +201,11 @@
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -151,9 +220,11 @@
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -168,9 +239,11 @@
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -185,9 +258,11 @@
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -202,9 +277,11 @@
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -219,9 +296,11 @@
                     </div>
 
                     <div class="card">
-                        <img src="./assets/Gorod_img.png" alt="Город">
+                        <div class="card_img">
+                            <img src="./assets/Gorod_img.png" alt="Город">
+                        </div>
                         <div class="card-info text-black">
-                            <img class="card_img" src="./assets/women.png" alt="human">
+                            <img class="card-info_img" src="./assets/women.png" alt="human">
                             <p class="card_city">Ярославль</p>
                             <p class="card_surname">Суворова</p>
                             <p class="card_name">Ольга Викторовна</p>
@@ -246,7 +325,7 @@
                 <p class="sign-up-ref_text text-white">
                     <span>Зарегистрируйте площадку</span> и проведите Акцию в своем регионе
                 </p>
-                <a href="">
+                <a href="" onclick="scrollToElem('.sign-up')">
                     <button class="sign-up-ref_button text-white">Зарегистрировать</button>
                 </a>
             </div>
@@ -307,111 +386,94 @@
                 </div>
             </div>
             <img class="videos_img" src="./assets/Img_Pushkin_Gogol.svg" alt="Пушник и Гоголь">
+            <img class="videos_img videos_img-420" src="./assets/Img_Pushkin_Gogol-mobile.svg" alt="Пушник и Гоголь">
         </section>
         <section class="people">
             <h2 class="people_title text-white">Акция в людях</h2>
-            <div class="people_photos">
+            <div class="people_photos people_photos-desk">
                 <div class="photos-line">
-                    <div class="photos-carousel-wrap">
+                    <div class="photos-carousel-wrap photos-carousel-wrap-desk">
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/1.png" alt="1">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/2.png" alt="2">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/3.png" alt="3">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/4.png" alt="4">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/5.png" alt="5">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/6.png" alt="6">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/13.png" alt="13">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/15.png" alt="15">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/17.png" alt="17">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/19.png" alt="19">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/21.png" alt="21">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
-                        </div>
-                        <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
-                        </div>
-                        <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
-                        </div>
-                        <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/23.png" alt="23">
                         </div>
                     </div>
                 </div>
                 <div class="photos-line">
-                    <div class="photos-carousel-wrap">
+                    <div class="photos-carousel-wrap photos-carousel-wrap-desk">
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/7.png" alt="7">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/8.png" alt="8">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/9.png" alt="9">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/10.png" alt="10">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/11.png" alt="11">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/12.png" alt="12">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/14.png" alt="14">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/16.png" alt="16">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/18.png" alt="18">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/20.png" alt="20">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/22.png" alt="22">
                         </div>
                         <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
-                        </div>
-                        <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
-                        </div>
-                        <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
-                        </div>
-                        <div class="photo_wrapper">
-                            <img src="./assets/1.png" alt="1">
+                            <img src="./assets/people_photos/24.png" alt="24">
                         </div>
                     </div>
                 </div>
 
                 <div class="photos_navigation">
-                    <button class="photos_button-prev disabled">
+                    <button class="photos_button-prev photos_button-prev-desk disabled">
 
                         <svg viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -420,13 +482,14 @@
                         </svg>
                     </button>
 
-                    <button class="photos_button selected"></button>
+                    <button class="photos_button photos_button-desk selected"></button>
 
-                    <button class="photos_button"></button>
-                    <button class="photos_button"></button>
-                    <button class="photos_button"></button>
+                    <button class="photos_button photos_button-desk"></button>
+                    <button class="photos_button photos_button-desk"></button>
+                    <button class="photos_button photos_button-desk"></button>
 
-                    <button class="photos_button-next">
+
+                    <button class="photos_button-next photos_button-next-desk">
 
                         <svg viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -437,44 +500,168 @@
                     </button>
                 </div>
             </div>
+
+            <div class="people_photos people_photos-mobile">
+                <div class="photos-line">
+                    <div class="photos-carousel-wrap photos-carousel-wrap-mobile">
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/1.png" alt="1">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/2.png" alt="2">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/3.png" alt="3">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/4.png" alt="4">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/5.png" alt="5">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/6.png" alt="6">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/7.png" alt="7">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/8.png" alt="8">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/9.png" alt="9">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/10.png" alt="10">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/11.png" alt="11">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/12.png" alt="12">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/13.png" alt="13">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/14.png" alt="14">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/15.png" alt="15">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/16.png" alt="16">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/17.png" alt="17">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/18.png" alt="18">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/19.png" alt="19">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/20.png" alt="20">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/21.png" alt="21">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/22.png" alt="22">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/23.png" alt="23">
+                        </div>
+                        <div class="photo_wrapper">
+                            <img src="./assets/people_photos/24.png" alt="24">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="photos_navigation">
+
+                    <button class="photos_button-prev photos_button-prev-mobile disabled">
+
+                        <svg viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M30.1852 38.5857L15.5995 24L30.1852 9.41427C32.3392 7.26027 32.3392 3.7695 30.1852 1.6155C28.0312 -0.5385 24.5385 -0.5385 22.3845 1.6155L0 24L22.3845 46.3845C24.5385 48.5385 28.0312 48.5385 30.1852 46.3845C31.2632 45.3085 31.8002 43.8978 31.8002 42.4851C31.8002 41.0725 31.2632 39.6618 30.1852 38.5857Z"
+                                fill="currentColor" />
+                        </svg>
+                    </button>
+
+                    <button class="photos_button photos_button-mobile selected"></button>
+
+                    <button class="photos_button photos_button-mobile"></button>
+                    <button class="photos_button photos_button-mobile"></button>
+                    <button class="photos_button photos_button-mobile"></button>
+                    <button class="photos_button photos_button-mobile"></button>
+                    <button class="photos_button photos_button-mobile"></button>
+                    <button class="photos_button photos_button-mobile"></button>
+                    <button class="photos_button photos_button-mobile"></button>
+                    <button class="photos_button photos_button-mobile"></button>
+
+                    <button class="photos_button-next photos_button-next-mobile">
+
+                        <svg viewBox="0 0 32 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M30.1852 38.5857L15.5995 24L30.1852 9.41427C32.3392 7.26027 32.3392 3.7695 30.1852 1.6155C28.0312 -0.5385 24.5385 -0.5385 22.3845 1.6155L0 24L22.3845 46.3845C24.5385 48.5385 28.0312 48.5385 30.1852 46.3845C31.2632 45.3085 31.8002 43.8978 31.8002 42.4851C31.8002 41.0725 31.2632 39.6618 30.1852 38.5857Z"
+                                fill="currentColor" />
+                        </svg>
+
+                    </button>
+
+                </div>
+            </div>
         </section>
         <section class="sign-up">
             <div class="container">
-                <form action="" class="sign-up_form text-white">
+                <form onsubmit="return false" action="" class="sign-up_form text-white">
                     <div class="sign-up_form-title">
                         <h2 class="form_title">Зарегистрировать площадку</h2>
                         <p class="form_subtitle">Зарегистрируйте площадку и проведите Акцию в своем регионе:</p>
                     </div>
 
                     <div class="sign-up_form-inputs">
-                        <label for="surname">Фамилия</label>
-                        <input type="text" name="surname" id="" placeholder="Иванов">
-
-                        <label for="surname">Имя</label>
-                        <input type="text" name="name" id="" placeholder="Иван">
-
-                        <label for="patronymic">Отчество</label>
-                        <input type="text" name="patronymic" id="" placeholder="Иванович">
-
-                        <label for="place">Наименование площадки</label>
-                        <input type="text" name="place" id="" placeholder="Наименование площадки">
-
-                        <label for="region">Регион</label>
-                        <input type="text" name="region" id="" placeholder="Регион">
-
-                        <label for="city">Населенный пункт</label>
-                        <input type="text" name="city" id="" placeholder="Населенный пункт">
-
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="" placeholder="myemail@example.com">
-
-                        <label for="phone">Мобильный телефон</label>
-                        <input type="tel" name="phone" id="" placeholder="+7 (999) 999-99-99">
+                        <div class="sign-up_form-input">
+                            <label for="surname">Фамилия</label>
+                            <input type="text" name="surname" id="surname" placeholder="Иванов">
+                        </div>
+                        <div class="sign-up_form-input">
+                            <label for="name">Имя</label>
+                            <input type="text" name="name" id="name" placeholder="Иван">
+                        </div>
+                        <div class="sign-up_form-input">
+                            <label for="patronymic">Отчество</label>
+                            <input type="text" name="patronymic" id="patronymic" placeholder="Иванович">
+                        </div>
+                        <div class="sign-up_form-input">
+                            <label for="place">Наименование площадки</label>
+                            <input type="text" name="place" id="place" placeholder="Наименование площадки">
+                        </div>
+                        <div class="sign-up_form-input">
+                            <label for="region">Регион</label>
+                            <input type="text" name="region" id="region" placeholder="Регион">
+                        </div>
+                        <div class="sign-up_form-input">
+                            <label for="city">Населенный пункт</label>
+                            <input type="text" name="city" id="city" placeholder="Населенный пункт">
+                        </div>
+                        <div class="sign-up_form-input">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" placeholder="myemail@example.com">
+                        </div>
+                        <div class="sign-up_form-input">
+                            <label for="phone">Мобильный телефон</label>
+                            <input type="tel" name="phone" id="phone" placeholder="+7 (999) 999-99-99">
+                        </div>
 
                         <div class="sign-up_form-checkbox">
-                            <input type="checkbox" name="checkbox" id="">
-                            <label for="checkbox">Я ознакомился и согласен с <span>Обработкой персональных
-                                    данных</span></label>
+                            <input type="checkbox" name="checkbox" id="checkbox">
+                            <label for="checkbox"></label>
+                            <p>Я ознакомился и согласен с <span>Обработкой персональных
+                                    данных</span></з>
                         </div>
                     </div>
 
@@ -499,14 +686,24 @@
         <div class="container">
             <div class="footer_block">
                 <ul class="footer_nav text-black">
-                    <li><a href="">Об акции </a></li>
-                    <li><a href="">Фотографии</a></li>
-                    <li><a href="">Флагманские площадки</a></li>
+                    <li><a href="" onclick="scrollToElem('.about')">Об акции </a></li>
+                    <li><a href="" onclick="scrollToElem('.people')">Фотографии</a></li>
+                    <li><a href="" onclick="scrollToElem('.cards')">Флагманские площадки</a></li>
                     <li><a href="">Положение об акции</a></li>
-                    <li><a href="">Как выступать публично</a></li>
-                    <li><a href="">Организаторы</a></li>
+                    <li><a href="" onclick="scrollToElem('.videos')">Как выступать публично</a></li>
+                    <li><a href="" onclick="scrollToElem('.cards')">Организаторы</a></li>
                 </ul>
-                <button class="footer_button text-white">Зарегистрировать площадку</button>
+
+                <ul class="footer_nav footer_nav-1024 text-black">
+                    <li><a href="" onclick="scrollToElem('.about')">Об акции </a></li>
+                    <li><a href="" onclick="scrollToElem('.cards')">Организаторы площадок</a></li>
+                    <li><a href="" onclick="scrollToElem('.videos')">Как выступать публично</a></li>
+                    <li><a href="" onclick="scrollToElem('.people')">Акция в лицах</a></li>
+                    <li><a href="">Положение об акции</a></li>
+                </ul>
+
+                <button class="footer_button text-white" onclick="scrollToElem('.sign-up')">Зарегистрировать
+                    площадку</button>
             </div>
             <div class="footer_line"></div>
             <div class="footer_block">
@@ -533,18 +730,31 @@
 
     <script src="scripts/corousel.js"></script>
     <script src="scripts/cardsloading.js"></script>
+    <script src="scripts/burger.js"></script>
+    <script src="scripts/scroll.js"></script>
+    <script src="scripts/validateForm.js"></script>
 
     <script>
         const slide_coeff = window.innerWidth < 1024 ? 1 : 0.5;
+        const max_positions = window.innerWidth < 1920 ? 4 : 3;
         const carousel_photo = new Carousel({
-            "main": ".people_photos",
-            "wrap": ".photos-carousel-wrap",
-            "prev": ".photos_button-prev",
-            "next": ".photos_button-next",
-            "points": ".photos_button",
+            "main": ".people_photos-desk",
+            "wrap": ".photos-carousel-wrap-desk",
+            "prev": ".photos_button-prev-desk",
+            "next": ".photos_button-next-desk",
+            "points": ".photos_button-desk",
             "slide_coefficient": slide_coeff,
-            "max_position": 4,
+            "max_position": max_positions,
             "several_wrap": true
+        });
+
+        const carousel_photo_mobile = new Carousel({
+            "main": ".people_photos-mobile",
+            "wrap": ".photos-carousel-wrap-mobile",
+            "prev": ".photos_button-prev-mobile",
+            "next": ".photos_button-next-mobile",
+            "points": ".photos_button-mobile",
+            "slide_coefficient": 1,
         });
 
         const carousel_video = new Carousel({
@@ -554,6 +764,14 @@
             "next": ".video_button-next",
             "points": ".video_button",
             "slide_coefficient": 1,
+        });
+    </script>
+
+    <script>
+        const links = document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+            });
         });
     </script>
 </body>
