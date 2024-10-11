@@ -2383,3 +2383,13 @@ footer>.container {
 
 
 }
+
+@media screen and (max-width: 390px) {
+    .input_error {
+        padding-bottom: 60px;
+    }
+
+    .input_error::after {
+        top: calc(100% - 60px);
+    }
+}
