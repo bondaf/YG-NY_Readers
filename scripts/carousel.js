@@ -14,8 +14,8 @@ function Carousel (setting) {
         "main": document.querySelector(privates.setting.main),
         "wrap": privates.setting.several_wrap ? document.querySelectorAll(privates.setting.wrap) : document.querySelector(privates.setting.wrap),
         "children": document.querySelector(privates.setting.wrap).children,
-        "prev": document.querySelector(privates.setting.prev),
-        "next": document.querySelector(privates.setting.next),
+        "prev": document.querySelectorAll(privates.setting.prev),
+        "next": document.querySelectorAll(privates.setting.next),
         "points": document.querySelectorAll(privates.setting.points)
     };
 
@@ -25,16 +25,20 @@ function Carousel (setting) {
     };
 
     // Control
-    if (privates.sel.prev !== null) {
-        privates.sel.prev.addEventListener('click', () => {
-            this.prev_slide();
-        });
+    if (privates.sel.prev.length > 0) {
+        for (let elem of privates.sel.prev) {
+            elem.addEventListener('click', () => {
+                this.prev_slide();
+            });
+        }
     }
 
-    if (privates.sel.next !== null) {
-        privates.sel.next.addEventListener('click', () => {
-            this.next_slide();
-        });
+    if (privates.sel.next.length > 0) {
+        for (let elem of privates.sel.next) {
+            elem.addEventListener('click', () => {
+                this.next_slide();
+            });
+        }
     }
 
     if (privates.sel.points !== null) {
@@ -100,7 +104,7 @@ function Carousel (setting) {
             }
         });
 
-        if (privates.sel.next != null && privates.sel.prev != null) {
+        if (privates.sel.next.length != 0 && privates.sel.prev.length != 0) {
             change_arrows();
         }
 
@@ -116,18 +120,26 @@ function Carousel (setting) {
 
     const change_arrows = () => {
         if (privates.opt.position === privates.opt.max_position - 1) {
-            privates.sel.next.classList.add('disabled');
+            for (let elem of privates.sel.next) {
+                elem.classList.add('disabled');
+            }
         }
         else {
-            privates.sel.next.classList.remove('disabled');
+            for (let elem of privates.sel.next) {
+                elem.classList.remove('disabled');
+            }
         }
 
 
         if (privates.opt.position === 0) {
-            privates.sel.prev.classList.add('disabled');
+            for (let elem of privates.sel.prev) {
+                elem.classList.add('disabled');
+            }
         }
         else {
-            privates.sel.prev.classList.remove('disabled');
+            for (let elem of privates.sel.prev) {
+                elem.classList.remove('disabled');
+            }
         }
     };
 

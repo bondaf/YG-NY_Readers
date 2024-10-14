@@ -6,12 +6,14 @@ const open = () => {
     menu.style.display = 'flex';
     button_open.style.display = 'none';
     button_close.style.display = 'block';
+    document.querySelector('body').style.overflow = 'hidden';
 };
 
 const close = () => {
     menu.style.display = 'none';
     button_open.style.display = 'block';
     button_close.style.display = 'none';
+    document.querySelector('body').style.overflow = 'auto';
 };
 
 button_open.addEventListener('click', () => {

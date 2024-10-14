@@ -14,5 +14,7 @@ document.querySelector('.cards_button').addEventListener('click', () => {
         cards[i].style.display = 'block';
     }
 
+    document.querySelector('.cards_button').style.display = 'none';
+
 
 });
