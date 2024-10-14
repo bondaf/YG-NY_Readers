@@ -2483,4 +2483,8 @@ footer>.container {
     .input_error::after {
         top: calc(100% - 60px);
     }
+
+    .footer_button {
+        padding: 16px 10px;
+    }
 }
