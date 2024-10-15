@@ -9,4 +9,9 @@ window.addEventListener('scroll', () => {
     } else {
         document.querySelector('.cards_to-top').style.display = 'none';
     }
+
+    console.log(window.innerWidth);
+    if (window.innerWidth < 1439) {
+        document.querySelector('.cards_to-top').style.display = 'none';
+    }
 });

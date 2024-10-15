@@ -245,8 +245,8 @@ header {
     height: 30px;
 }
 
-nav li:hover,
-nav li:active {
+nav a:hover,
+nav a:active {
     transition: 0.2s;
     color: #FE9327;
 }
@@ -429,7 +429,7 @@ main {
     letter-spacing: 0.03px;
     text-align: center;
 
-    margin-bottom: 78px;
+
 }
 
 .cards_block {
@@ -438,6 +438,7 @@ main {
     column-gap: 80px;
     row-gap: 48px;
     margin-bottom: 48px;
+    margin-top: 78px;
 
     position: relative;
 
@@ -1428,11 +1429,10 @@ footer>.container {
         align-items: center;
     }
 
-    .cards_subtitle {
-        margin-bottom: 64px;
-    }
+    .cards_subtitle {}
 
     .cards_block {
+        margin-top: 64px;
         column-gap: 60px;
     }
 
@@ -1720,11 +1720,10 @@ footer>.container {
         align-items: center;
     }
 
-    .cards_subtitle {
-        margin-bottom: 64px;
-    }
+    .cards_subtitle {}
 
     .cards_block {
+        margin-top: 64px;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 54px;
     }
@@ -1732,6 +1731,10 @@ footer>.container {
     .card-info {
         position: relative;
         padding: 68px 42px 48px 42px;
+    }
+
+    .cards_to-top {
+        display: none;
     }
 
 
@@ -2130,16 +2133,17 @@ footer>.container {
     }
 
     .cards_subtitle {
-        margin-bottom: 32px;
         text-wrap: wrap;
-        text-align: left;
+        text-align: center;
     }
 
     .cards_block {
+
         grid-template-columns: repeat(1, 95vw);
         column-gap: 0;
         row-gap: 22px;
 
+        margin-top: 32px;
         margin-bottom: 26px;
     }
 
@@ -2406,6 +2410,13 @@ footer>.container {
 
 }
 
+@media screen and (max-width: 515px) {
+    .cards_subtitle {
+        align-self: start;
+        text-align: left;
+    }
+}
+
 @media screen and (max-width: 419px) {
 
     .header_banner .container {
@@ -2423,6 +2434,10 @@ footer>.container {
     .about_img {
         max-width: 100%;
         left: 0;
+    }
+
+    .cards_button {
+        width: 281px;
     }
 
     .videos_carousel_main {
