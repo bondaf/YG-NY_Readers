@@ -128,7 +128,6 @@ const form = document.querySelector('.sign-up_form');
 const checkbox = document.querySelector('#checkbox');
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(inputs);
     check_inputs();
     if (!checkbox.checked) {
         alert('Пожалуйста, подтвердите согласие с обработкой персональных данных');
