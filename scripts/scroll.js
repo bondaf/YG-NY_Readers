@@ -11,7 +11,7 @@ window.addEventListener('scroll', () => {
     }
 
     console.log(window.innerWidth);
-    if (window.innerWidth < 1439) {
+    if (window.innerWidth < 1024) {
         document.querySelector('.cards_to-top').style.display = 'none';
     }
 });
